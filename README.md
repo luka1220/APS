@@ -21,9 +21,8 @@ struct maze
     maze *right;
     line *line1;
     line *line2;
-};```
+};
 
-```
 maze *maze_random(width, height){
   maze m = new maze()
   1. seaperate the space for the longer dimation (width or height) with a two lines leaving space for one dore.
@@ -32,4 +31,4 @@ maze *maze_random(width, height){
   m->right = maze_random(width_right, height_right)
   return m
 }
-`
+```
