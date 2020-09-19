@@ -1,7 +1,7 @@
 # APS
 
 ## 1. APP MAZE
-[!#maze/code/maze.svg](!#maze/code/maze.svg)
+![maze.svg](maze/code/maze.svg)
 
 ### data-structure
 ```
