@@ -3,7 +3,7 @@
 ## 1. APP MAZE
 
 ### data-structure
-`
+```
 struct line 
 {
     unsigned int x1;
@@ -21,9 +21,9 @@ struct maze
     maze *right;
     line *line1;
     line *line2;
-};`
+};```
 
-`
+```
 maze *maze_random(width, height){
   maze m = new maze()
   1. seaperate the space for the longer dimation (width or height) with a two lines leaving space for one dore.
