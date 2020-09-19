@@ -60,21 +60,18 @@ maze *maze_random (int width, int height){
         ptr_maze->line2->y2 = hr;
         ptr_maze->line2->x2 = width;
     }
-    printf("w,h: %d, %d. ex: %d %d %d ", width, height, exit, hr, hl);
-    //maze node = {width, height, NULL, NULL, exit, is_x};
-    //ptr_maze = &node;
+    //printf("w,h: %d, %d. ex: %d %d %d ", width, height, exit, hr, hl);
     ptr_maze->width=width;
     ptr_maze->height=height;
     
     ptr_maze->left = maze_random(wl, hl);
     ptr_maze->right = maze_random(wr, hr);
-    //printf("ptr: left: %d %d ", ptr_maze->left->height, ptr_maze->left->width);
+    
     return ptr_maze;
 }
 
 void maze_svg (maze *maze1, char *filename){
     FILE *file = fopen(filename,"w");
-    printf("maze: %d, %d", maze1->width, maze1->height);
     unsigned int width = maze1->width, height=maze1->height;
     //line *l1 = maze1->line1;
     //line *l2 = maze1->line2;
@@ -87,6 +84,11 @@ void maze_svg (maze *maze1, char *filename){
     svg_line(file, maze1->line2->x1, maze1->line2->y1, maze1->line2->x2, maze1->line2->y2);
     
     svg_maze_recursion(file, maze1, 0, 0);
+    unsigned int x, y; 
+    x = rand() % width; 
+    y = rand() % height;
+    printf("%d, %d ", x, y);
+    svg_rect(file, x, y, x+1, y+1);
     //free(maze);
     svg_footer(file);
 }
